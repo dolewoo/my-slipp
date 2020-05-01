@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import net.slipp.domain.User;
+
 @Controller
 public class UserController {
 	private List<User> users = new ArrayList<User>();
