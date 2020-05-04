@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.slipp.domain.User;
@@ -75,6 +74,12 @@ public class UserController {
 		user.update(newUser);
 		userRepository.save(user);
 		return "redirect:/users";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("user");
+		return "redirect:/";
 	}
 	
 }
